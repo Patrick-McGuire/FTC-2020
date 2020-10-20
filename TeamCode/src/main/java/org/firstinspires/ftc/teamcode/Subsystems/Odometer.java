@@ -18,9 +18,13 @@ public class Odometer {
     public DcMotor m2;
     public DcMotor m3;
 
+    private ElapsedTime time;
+    private double lastTime = 0;
+    public double tickTime = 0;
+
     // Constants
     private final double ticksPerRev = 8192;
-    private final double wheelDiamiter = 2;
+    private final double wheelDiamiter = 1.88976;
     private final double r1 = 7;  // Positive
     private final double r2 = -6.75;  // Negative
     private final double r3 = -7;  // Negative
@@ -37,6 +41,9 @@ public class Odometer {
         m1 = hardwareMap.get(DcMotor.class, "1");
         m2 = hardwareMap.get(DcMotor.class, "2");
         m3 = hardwareMap.get(DcMotor.class, "3");
+        time = new ElapsedTime();
+        time.reset();
+
     }
 
     public void updateOdometry() {
@@ -70,5 +77,8 @@ public class Odometer {
         y += deltaYMap;
         x += deltaXMap;
         theta += deltaTheta;
+
+        tickTime = time.milliseconds() - lastTime;
+        lastTime = time.milliseconds();
     }
 }

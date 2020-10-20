@@ -25,7 +25,7 @@ public class BasicMecanum {         //MeCANum?  More like MeCAN'Tum
 
         this.imu = imu;
 
-        headingPID = new PID(-0.02,0,0);
+        headingPID = new PID(0,0,0);
     }
 
     public void openLoopMecanum(double x, double y, double yaw) {
