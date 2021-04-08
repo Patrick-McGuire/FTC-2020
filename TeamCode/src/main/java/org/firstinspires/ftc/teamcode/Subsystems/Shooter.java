@@ -20,7 +20,7 @@ public class Shooter {
     private int LAST_STATE = STATE;
 
     // Info
-    public final double kP = 0;
+    public final double kP = 0.005;
     public final double kI = 0;
     public final double kD = 0;
     public final double kF = 0;

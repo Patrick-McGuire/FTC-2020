@@ -42,8 +42,8 @@ public final class Proto_Tele extends OpMode {
 
 
         // Telemetry to the driver station. NOTE: %.2f means floating point
-        telemetry.addData("Robot","Heading (%.2f)",
-                imu.getYaw());
+            telemetry.addData("Robot","Heading (%.2f)",
+                    imu.getYaw());
         telemetry.addData("Drive Train","F-Left (%.2f), F-Right (%.2f), B-Left (%.2f), Back Right (%.2f)",
                 drivetrain.getDrivetrain().getFrontLeftPower(), drivetrain.getDrivetrain().getFrontRightPower(), drivetrain.getDrivetrain().getBackLeftPower(), drivetrain.getDrivetrain().getBackRightPower());
         telemetry.addData("Drive Train O","X (%.2f), Y (%.2f), Theta (%.2f), TickTime (%.2f)",
