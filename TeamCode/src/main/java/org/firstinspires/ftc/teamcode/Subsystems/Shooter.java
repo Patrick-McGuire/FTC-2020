@@ -38,7 +38,7 @@ public class Shooter {
         // Initialize class members
         shooterMotor = hardwareMap.get(DcMotor.class, "5");
         shooterMotor.setPower(0);
-        shooterPID = new PID(kP,kI, kD);
+        shooterPID = new PID(kP, kI, kD);
         veloTimer = new ElapsedTime();
     }
 
